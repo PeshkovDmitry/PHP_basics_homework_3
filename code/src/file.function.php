@@ -27,18 +27,22 @@ function addFunction(array $config) : string {
 
     $name = readline("Введите имя: ");
     $date = readline("Введите дату рождения в формате ДД-ММ-ГГГГ: ");
-    $data = $name . ", " . $date . "\r\n";
 
-    $fileHandler = fopen($address, 'a');
+    if(validate($date)){
+        $data = $name . ", " . $date . "\r\n";
 
-    if(fwrite($fileHandler, $data)){
-        return "Запись $data добавлена в файл $address"; 
+        $fileHandler = fopen($address, 'a');
+        if(fwrite($fileHandler, $data)){
+            return "Запись $data добавлена в файл $address"; 
+        }
+        else {
+            return handleError("Произошла ошибка записи. Данные не сохранены");
+        }
+        fclose($fileHandler);
+    } else {
+        return handleError("Дата рождения указана в неправильном формате. Данные не сохранены");
     }
-    else {
-        return handleError("Произошла ошибка записи. Данные не сохранены");
-    }
-
-    fclose($fileHandler);
+    
 }
 
 // function clearFunction(string $address) : string {
