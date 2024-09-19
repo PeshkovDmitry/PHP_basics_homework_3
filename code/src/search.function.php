@@ -16,7 +16,7 @@ function searchByBirthday(array $config) : string {
 
         $data = explode("\r\n", $contents);    
 
-        $date = readline("Введите дату рождения в формате ДД-ММ-ГГГГ: ");
+        $date = date("d-m-Y");
 
         foreach ($data as $record){
             $recordData = explode(',', $record);
