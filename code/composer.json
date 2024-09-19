@@ -12,7 +12,8 @@
             "src/file.function.php",
             "src/validate.function.php",
             "src/search.function.php",
-            "src/delete.functions.php"
+            "src/delete.functions.php",
+            "src/export.functions.php"
         ]
     }
 }

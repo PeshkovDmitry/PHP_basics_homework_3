@@ -28,6 +28,7 @@ function parseCommand() : string {
             'add' => 'addFunction',
             'search' => 'searchByBirthday',
             'delete' => 'deleteRecord',
+            'export' => 'export',
             'clear' => 'clearFunction',
             'read-profiles' => 'readProfilesDirectory',
             'read-profile' => 'readProfile',
