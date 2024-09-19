@@ -26,6 +26,7 @@ function parseCommand() : string {
         $functionName = match($_SERVER['argv'][1]) {
             'read-all' => 'readAllFunction',
             'add' => 'addFunction',
+            'search' => 'searchByBirthday',
             'clear' => 'clearFunction',
             'read-profiles' => 'readProfilesDirectory',
             'read-profile' => 'readProfile',
